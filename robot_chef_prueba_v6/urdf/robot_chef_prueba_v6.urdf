@@ -1,0 +1,2075 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_chef_prueba_v6">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.037242 -0.4829 -0.87131"
+        rpy="0 0 0" />
+      <mass
+        value="2114.6" />
+      <inertia
+        ixx="1214.9"
+        ixy="0.31415"
+        ixz="-8.4286"
+        iyy="1499.6"
+        iyz="-33.332"
+        izz="570.71" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="iz1_Link">
+    <inertial>
+      <origin
+        xyz="0.046899019277028 0.00599386120501055 2.22519419557088E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.450104915206598" />
+      <inertia
+        ixx="0.000334303263892515"
+        ixy="9.96318726703731E-05"
+        ixz="-1.67196559200719E-10"
+        iyy="0.000690198693942158"
+        iyz="3.88296382489624E-10"
+        izz="0.000670525862276053" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i1"
+    type="continuous">
+    <origin
+      xyz="-0.198356243226931 -0.7 0"
+      rpy="3.14159265358979 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="iz1_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="iz2_Link">
+    <inertial>
+      <origin
+        xyz="0.123170245762431 2.24128305997828E-07 -0.00580584423243669"
+        rpy="0 0 0" />
+      <mass
+        value="1.05627303687569" />
+      <inertia
+        ixx="0.000800954354611823"
+        ixy="-8.19290612147664E-09"
+        ixz="1.82012426586531E-09"
+        iyy="0.00563952897742919"
+        iyz="-1.10969299836202E-09"
+        izz="0.0056911560526873" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i2"
+    type="revolute">
+    <origin
+      xyz="-0.00357189922674747 0 0"
+      rpy="1.5707963267949 0 -3.14159265358979" />
+    <parent
+      link="iz1_Link" />
+    <child
+      link="iz2_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.3963"
+      upper="1.3963"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz3_Link">
+    <inertial>
+      <origin
+        xyz="-0.0820008178809861 -2.51271962209421E-07 -0.00507737401116559"
+        rpy="0 0 0" />
+      <mass
+        value="0.725662148891879" />
+      <inertia
+        ixx="0.00057017315857775"
+        ixy="6.96000352801363E-09"
+        ixz="0.000235262219959166"
+        iyy="0.00221358505941085"
+        iyz="8.70563297078182E-09"
+        izz="0.00224067994548019" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i3"
+    type="revolute">
+    <origin
+      xyz="0.248000000000001 0 0"
+      rpy="3.14159265358979 0 -3.14159265358979" />
+    <parent
+      link="iz2_Link" />
+    <child
+      link="iz3_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.3963"
+      upper="1.3963"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz4_Link">
+    <inertial>
+      <origin
+        xyz="-0.0936340655859038 -3.26723792187789E-08 -0.00454395848901257"
+        rpy="0 0 0" />
+      <mass
+        value="0.613865486215885" />
+      <inertia
+        ixx="0.000458594108253679"
+        ixy="-1.07774988503502E-09"
+        ixz="-0.000141736411306983"
+        iyy="0.00119500344851908"
+        iyz="-2.94085219447195E-09"
+        izz="0.00121551589680621" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i4"
+    type="continuous">
+    <origin
+      xyz="-0.135000000000002 0 0"
+      rpy="0.00240768248758283 0 0" />
+    <parent
+      link="iz3_Link" />
+    <child
+      link="iz4_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="iz5_Link">
+    <inertial>
+      <origin
+        xyz="-0.052664238732409 -2.9966948608684E-07 -0.00770287929963565"
+        rpy="0 0 0" />
+      <mass
+        value="0.441095544298267" />
+      <inertia
+        ixx="0.000334974664613456"
+        ixy="-4.5518055062031E-09"
+        ixz="0.00011176763930799"
+        iyy="0.000773087753603316"
+        iyz="9.9887682840268E-09"
+        izz="0.000808220391854739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz5_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i5"
+    type="revolute">
+    <origin
+      xyz="-0.162999999999993 0 0"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="iz4_Link" />
+    <child
+      link="iz5_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.2217"
+      upper="1.3963"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz6_Link">
+    <inertial>
+      <origin
+        xyz="-0.0703002600247344 4.1717175203182E-07 -2.1094237467878E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.412559191037482" />
+      <inertia
+        ixx="0.000291363474329428"
+        ixy="6.20991320193826E-09"
+        ixz="-2.01551792960855E-16"
+        iyy="0.000379319131169277"
+        iyz="-8.62997824244149E-16"
+        izz="0.000379318429622878" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6"
+    type="continuous">
+    <origin
+      xyz="-0.0800000000000022 0 0"
+      rpy="-0.523598775598298 0 0" />
+    <parent
+      link="iz5_Link" />
+    <child
+      link="iz6_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="iz6_11Link">
+    <inertial>
+      <origin
+        xyz="0.002073 0 -0.0020381"
+        rpy="0 0 0" />
+      <mass
+        value="0.0067607" />
+      <inertia
+        ixx="4.6872E-07"
+        ixy="-3.8381E-22"
+        ixz="-5.2221E-08"
+        iyy="3.186E-07"
+        iyz="3.6396E-23"
+        izz="4.7056E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_11Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_11Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_11"
+    type="revolute">
+    <origin
+      xyz="-0.112 0.0121 0.020958"
+      rpy="1.5708 -1.0472 1.5708" />
+    <parent
+      link="iz6_Link" />
+    <child
+      link="iz6_11Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz6_12Link">
+    <inertial>
+      <origin
+        xyz="0.014835 1.5186E-11 -2.5109E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.003519" />
+      <inertia
+        ixx="1.2963E-07"
+        ixy="-2.0603E-16"
+        ixz="-9.698E-14"
+        iyy="1.8447E-07"
+        iyz="1.5253E-11"
+        izz="2.2932E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_12Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_12Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_12"
+    type="fixed">
+    <origin
+      xyz="0.00794974746830573 0 -0.00494974746830568"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="iz6_11Link" />
+    <child
+      link="iz6_12Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="iz6_13Link">
+    <inertial>
+      <origin
+        xyz="-0.014397 1.1102E-16 -5.2807E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0048858" />
+      <inertia
+        ixx="1.5827E-07"
+        ixy="4.9687E-14"
+        ixz="7.9359E-11"
+        iyy="3.9472E-07"
+        iyz="4.0009E-12"
+        izz="3.4484E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_13Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_13Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_13"
+    type="revolute">
+    <origin
+      xyz="0.0244852813742378 0 0"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="iz6_12Link" />
+    <child
+      link="iz6_13Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.69813"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz6_14Link">
+    <inertial>
+      <origin
+        xyz="0.011439 -7.5592E-12 1.2074E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.0051527" />
+      <inertia
+        ixx="1.9908E-07"
+        ixy="-1.6224E-16"
+        ixz="7.093E-16"
+        iyy="3.043E-07"
+        iyz="-1.1218E-13"
+        izz="3.2265E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_14Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_14Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_14"
+    type="revolute">
+    <origin
+      xyz="-0.0300000000000008 0 -5.38898154983092E-05"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="iz6_13Link" />
+    <child
+      link="iz6_14Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.0472"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz6_21Link">
+    <inertial>
+      <origin
+        xyz="0.00207298341630333 3.33066907387547E-16 -0.00203813228672634"
+        rpy="0 0 0" />
+      <mass
+        value="0.00676074066693878" />
+      <inertia
+        ixx="4.68720414197714E-07"
+        ixy="-1.45583787809333E-22"
+        ixz="-5.22208672124069E-08"
+        iyy="3.1860119381616E-07"
+        iyz="1.22422730657848E-22"
+        izz="4.70556835793397E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_21Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_21Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_21"
+    type="revolute">
+    <origin
+      xyz="-0.111980256121069 -0.0241447734505178 0"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="iz6_Link" />
+    <child
+      link="iz6_21Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz6_22Link">
+    <inertial>
+      <origin
+        xyz="0.0147808838974951 3.2568392427379E-12 -7.73357572425581E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.00353863572563513" />
+      <inertia
+        ixx="1.30103088217276E-07"
+        ixy="1.60995021566037E-16"
+        ixz="-9.6924110433585E-14"
+        iyy="1.84942425350664E-07"
+        iyz="1.52525804205835E-11"
+        izz="2.29378189918398E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_22Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_22Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_22"
+    type="fixed">
+    <origin
+      xyz="0.0079497474683059 0 -0.00494974746830568"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="iz6_21Link" />
+    <child
+      link="iz6_22Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="iz6_23Link">
+    <inertial>
+      <origin
+        xyz="-0.0143971864964466 -2.22044604925031E-16 -5.28069651649921E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00488582803282185" />
+      <inertia
+        ixx="1.58268955272717E-07"
+        ixy="4.96872175482905E-14"
+        ixz="7.93592997103557E-11"
+        iyy="3.94717166797732E-07"
+        iyz="4.00086107293317E-12"
+        izz="3.44839984171498E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_23Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_23Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_23"
+    type="revolute">
+    <origin
+      xyz="0.0244852813742391 0 0"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="iz6_22Link" />
+    <child
+      link="iz6_23Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.69813"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz6_24Link">
+    <inertial>
+      <origin
+        xyz="0.011438965446775 3.09641201567956E-12 1.00829344873432E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.00515270612839311" />
+      <inertia
+        ixx="1.99078387827487E-07"
+        ixy="4.41115249740252E-16"
+        ixz="5.3967047123003E-16"
+        iyy="3.04304176822823E-07"
+        iyz="-1.12022111777851E-13"
+        izz="3.22653914398189E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_24Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_24Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_24"
+    type="revolute">
+    <origin
+      xyz="-0.0299999999999999 0 -5.38898154972822E-05"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="iz6_23Link" />
+    <child
+      link="iz6_24Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.0472"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz6_31Link">
+    <inertial>
+      <origin
+        xyz="0.00207298341630247 -9.71445146547012E-16 -0.00203813228672678"
+        rpy="0 0 0" />
+      <mass
+        value="0.00676074066693878" />
+      <inertia
+        ixx="4.68720414197715E-07"
+        ixy="-1.89293045352401E-20"
+        ixz="-5.22208672124072E-08"
+        iyy="3.1860119381616E-07"
+        iyz="4.66286802159989E-20"
+        izz="4.70556835793398E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_31Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_31Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_31"
+    type="revolute">
+    <origin
+      xyz="-0.112000000000001 0.0121 -0.0209578147715833"
+      rpy="1.5707963267952 1.04719755119658 1.5707963267949" />
+    <parent
+      link="iz6_Link" />
+    <child
+      link="iz6_31Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz6_32Link">
+    <inertial>
+      <origin
+        xyz="0.0148354582126317 1.51857415531254E-11 2.51078533057836E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00351900075828717" />
+      <inertia
+        ixx="1.29628985849003E-07"
+        ixy="-2.06025289654529E-16"
+        ixz="-9.69797811870158E-14"
+        iyy="1.84468321490573E-07"
+        iyz="1.52526941879369E-11"
+        izz="2.29316828938797E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_32Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_32Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_32"
+    type="fixed">
+    <origin
+      xyz="0.0079497474683059 0 -0.00494974746830579"
+      rpy="3.14159263868863 1.5707963267949 0" />
+    <parent
+      link="iz6_31Link" />
+    <child
+      link="iz6_32Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="iz6_33Link">
+    <inertial>
+      <origin
+        xyz="-0.0143971864964463 2.38697950294409E-15 -5.28069651656304E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00488582803282169" />
+      <inertia
+        ixx="1.58268955272713E-07"
+        ixy="4.96872173811149E-14"
+        ixz="7.93592997099076E-11"
+        iyy="3.94717166797715E-07"
+        iyz="4.00086107403038E-12"
+        izz="3.4483998417148E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_33Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_33Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_33"
+    type="revolute">
+    <origin
+      xyz="0.0244852813742388 0 0"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="iz6_32Link" />
+    <child
+      link="iz6_33Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.69813"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="iz6_34Link">
+    <inertial>
+      <origin
+        xyz="0.011439 3.0959E-12 1.0083E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.0051527" />
+      <inertia
+        ixx="1.9908E-07"
+        ixy="4.4112E-16"
+        ixz="5.3967E-16"
+        iyy="3.043E-07"
+        iyz="-1.1202E-13"
+        izz="3.2265E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_34Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/iz6_34Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="i6_34"
+    type="revolute">
+    <origin
+      xyz="-0.0299999999999999 0 -5.38898154979206E-05"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="iz6_33Link" />
+    <child
+      link="iz6_34Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.0472"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de1_Link">
+    <inertial>
+      <origin
+        xyz="0.046899 0.0059939 2.2252E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.4501" />
+      <inertia
+        ixx="0.0003343"
+        ixy="9.9632E-05"
+        ixz="-1.672E-10"
+        iyy="0.0006902"
+        iyz="3.883E-10"
+        izz="0.00067053" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d1"
+    type="continuous">
+    <origin
+      xyz="0.14164375677307 -0.7 0"
+      rpy="3.1347714600349 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="de1_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="de2_Link">
+    <inertial>
+      <origin
+        xyz="0.123170214478795 9.0971106384341E-05 -0.00580582176623101"
+        rpy="0 0 0" />
+      <mass
+        value="1.0562732565036" />
+      <inertia
+        ixx="0.000800957406783288"
+        ixy="-3.57261281014573E-06"
+        ixz="1.92382598231357E-09"
+        iyy="0.00563952595673453"
+        iyz="-1.07608583509343E-09"
+        izz="0.00569115678280626" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d2"
+    type="revolute">
+    <origin
+      xyz="-0.00357189922674735 0 0"
+      rpy="1.57079632679489 0 3.14159265302779" />
+    <parent
+      link="de1_Link" />
+    <child
+      link="de2_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.3963"
+      upper="1.3963"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de3_Link">
+    <inertial>
+      <origin
+        xyz="-0.0820007599456525 0.000182478641151729 -0.00507736778635681"
+        rpy="0 0 0" />
+      <mass
+        value="0.725662074286973" />
+      <inertia
+        ixx="0.000570173201368613"
+        ixy="6.53209317159868E-09"
+        ixz="0.000235262196735889"
+        iyy="0.00221358517979188"
+        iyz="8.50220677416753E-09"
+        izz="0.00224067903647917" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d3"
+    type="revolute">
+    <origin
+      xyz="0.248 0 0"
+      rpy="3.14159265358979 0 3.14159250263411" />
+    <parent
+      link="de2_Link" />
+    <child
+      link="de3_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.3963"
+      upper="1.3963"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de4_Link">
+    <inertial>
+      <origin
+        xyz="-0.0936339918477448 0.000182680104167721 -0.00454394427635862"
+        rpy="0 0 0" />
+      <mass
+        value="0.613865661046716" />
+      <inertia
+        ixx="0.000458594275799547"
+        ixy="-1.02156716716133E-09"
+        ixz="-0.00014173637060252"
+        iyy="0.0011950033793905"
+        iyz="-2.7894848142881E-09"
+        izz="0.00121551627347461" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d4"
+    type="continuous">
+    <origin
+      xyz="-0.135000005935467 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="de3_Link" />
+    <child
+      link="de4_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="de5_Link">
+    <inertial>
+      <origin
+        xyz="-0.0526641873849999 -0.00018299393018642 -0.00770286576105161"
+        rpy="0 0 0" />
+      <mass
+        value="0.441095446672236" />
+      <inertia
+        ixx="0.000334974668607833"
+        ixy="-4.54383162948584E-09"
+        ixz="0.000111767660106979"
+        iyy="0.000773088201308897"
+        iyz="9.24505582886993E-09"
+        izz="0.000808219573594617" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de5_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d5"
+    type="revolute">
+    <origin
+      xyz="-0.162999994064533 0 0"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="de4_Link" />
+    <child
+      link="de5_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.2217"
+      upper="1.2217"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de6_Link">
+    <inertial>
+      <origin
+        xyz="-0.0703001869336869 0.000158655417427489 -9.13588024946677E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.412559191037483" />
+      <inertia
+        ixx="0.000291363474320705"
+        ixy="6.20996241571198E-09"
+        ixz="8.58326894555804E-14"
+        iyy="0.000379319131165864"
+        iyz="1.53482370042479E-16"
+        izz="0.000379318429617365" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6"
+    type="continuous">
+    <origin
+      xyz="-0.0800000057659613 0 0"
+      rpy="-2.61799387799149 0 0" />
+    <parent
+      link="de5_Link" />
+    <child
+      link="de6_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="de6_11Link">
+    <inertial>
+      <origin
+        xyz="0.00207298341630291 -0.000182717742395894 -0.0020380649616335"
+        rpy="0 0 0" />
+      <mass
+        value="0.00676074066693876" />
+      <inertia
+        ixx="4.68720414197713E-07"
+        ixy="2.67799723314043E-22"
+        ixz="-5.22208672124071E-08"
+        iyy="3.18601193816159E-07"
+        iyz="-4.9246441259361E-23"
+        izz="4.70556835793397E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_11Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_11Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_11"
+    type="revolute">
+    <origin
+      xyz="-0.111999994206837 0.0121000000622007 0.020957814881036"
+      rpy="1.57079632874941 -1.04719755119659 1.57079632454688" />
+    <parent
+      link="de6_Link" />
+    <child
+      link="de6_11Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de6_12Link">
+    <inertial>
+      <origin
+        xyz="0.0148353908875629 -0.000182717726968623 -2.5109393131606E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00351900075828588" />
+      <inertia
+        ixx="1.29628985849086E-07"
+        ixy="-2.07164352206997E-16"
+        ixz="-9.70913534836633E-14"
+        iyy="1.84468321490368E-07"
+        iyz="1.52526941857944E-11"
+        izz="2.29316828938763E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_12Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_12Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_12"
+    type="fixed">
+    <origin
+      xyz="0.00794974746830357 0 -0.00494974746830623"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="de6_11Link" />
+    <child
+      link="de6_12Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="de6_13Link">
+    <inertial>
+      <origin
+        xyz="-0.0143971191714136 0.000182717742283622 -5.28069489779126E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00488582803282179" />
+      <inertia
+        ixx="1.58268955272894E-07"
+        ixy="4.9685407168752E-14"
+        ixz="7.93595093253214E-11"
+        iyy="3.94717166797717E-07"
+        iyz="4.00086107435386E-12"
+        izz="3.44839984171305E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_13Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_13Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_13"
+    type="revolute">
+    <origin
+      xyz="0.0244852813742387 0 0"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="de6_12Link" />
+    <child
+      link="de6_13Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.69813"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de6_14Link">
+    <inertial>
+      <origin
+        xyz="0.011438898164613 -0.000182717749867278 2.4931279263285E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.0051527061096885" />
+      <inertia
+        ixx="1.99078387664651E-07"
+        ixy="-1.63041381251731E-16"
+        ixz="5.70404364116655E-16"
+        iyy="3.04304173813706E-07"
+        iyz="-1.12176703874171E-13"
+        izz="3.22653911242141E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_14Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_14Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_14"
+    type="revolute">
+    <origin
+      xyz="-0.0300000000000604 0 -5.38897817764505E-05"
+      rpy="0 0 -3.14159265358978" />
+    <parent
+      link="de6_13Link" />
+    <child
+      link="de6_14Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.0472"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de6_21Link">
+    <inertial>
+      <origin
+        xyz="0.00191474550051798 9.135870327448E-05 -0.00203806469590717"
+        rpy="0 0 0" />
+      <mass
+        value="0.00676074066693877" />
+      <inertia
+        ixx="4.68720429102578E-07"
+        ixy="-4.30266475213353E-15"
+        ixz="-5.22208674744806E-08"
+        iyy="3.1860119381616E-07"
+        iyz="1.25201681016499E-14"
+        izz="4.70556820888531E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_21Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_21Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_21"
+    type="revolute">
+    <origin
+      xyz="-0.111980250368517 -0.0241447733883282 0"
+      rpy="-1.57079624537858 0 -1.57079647006012" />
+    <parent
+      link="de6_Link" />
+    <child
+      link="de6_21Link" />
+    <axis
+      xyz="0 0.999999999999997 0" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de6_22Link">
+    <inertial>
+      <origin
+        xyz="0.0148353909299116 9.13588599762427E-05 -0.000183347623985836"
+        rpy="0 0 0" />
+      <mass
+        value="0.00351900077154952" />
+      <inertia
+        ixx="1.29628985888473E-07"
+        ixy="2.14583076956637E-16"
+        ixz="-9.68687544612996E-14"
+        iyy="1.84468323021719E-07"
+        iyz="1.52525804203188E-11"
+        izz="2.29316830686866E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_22Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_22Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_22"
+    type="fixed">
+    <origin
+      xyz="0.00794974817469313 0 -0.00494974633379874"
+      rpy="-0.516777568930955 1.57079616220619 -0.516777568930957" />
+    <parent
+      link="de6_21Link" />
+    <child
+      link="de6_22Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="de6_23Link">
+    <inertial>
+      <origin
+        xyz="-0.0143971191713248 -9.1358857135293E-05 -0.000211045179795422"
+        rpy="0 0 0" />
+      <mass
+        value="0.00488582803282171" />
+      <inertia
+        ixx="1.58268955272625E-07"
+        ixy="4.99184321890936E-14"
+        ixz="7.93591961877461E-11"
+        iyy="3.94717166797713E-07"
+        iyz="4.00086099587964E-12"
+        izz="3.44839984171569E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_23Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_23Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_23"
+    type="revolute">
+    <origin
+      xyz="0.0244852813742383 0 0"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="de6_22Link" />
+    <child
+      link="de6_23Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.69813"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de6_24Link">
+    <inertial>
+      <origin
+        xyz="0.0114388981646129 9.13588524593667E-05 -0.000158238200923283"
+        rpy="0 0 0" />
+      <mass
+        value="0.00515270610968855" />
+      <inertia
+        ixx="1.99078387664653E-07"
+        ixy="-5.94029780770128E-17"
+        ixz="7.77933520492959E-16"
+        iyy="3.04304173813713E-07"
+        iyz="-1.12176703086075E-13"
+        izz="3.22653911242147E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_24Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_24Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_24"
+    type="revolute">
+    <origin
+      xyz="-0.0299999999999704 0 -5.38898321483794E-05"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="de6_23Link" />
+    <child
+      link="de6_24Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.0472"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de6_31Link">
+    <inertial>
+      <origin
+        xyz="0.00223115001815949 9.13588712038171E-05 -0.00203813778826945"
+        rpy="0 0 0" />
+      <mass
+        value="0.00676074066693875" />
+      <inertia
+        ixx="4.68716744960942E-07"
+        ixy="1.32348898008484E-22"
+        ixz="-5.22208025664766E-08"
+        iyy="3.18601193816158E-07"
+        iyz="-6.39743906989427E-22"
+        izz="4.70560505030166E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_31Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_31Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_31"
+    type="revolute">
+    <origin
+      xyz="-0.1119999942478 0.0121000000622003 -0.020957814662131"
+      rpy="1.57079632874939 1.04719755119661 1.57079632793218" />
+    <parent
+      link="de6_Link" />
+    <child
+      link="de6_31Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de6_32Link">
+    <inertial>
+      <origin
+        xyz="0.0148356692831391 -9.1358876414982E-05 -0.000132435249014629"
+        rpy="0 0 0" />
+      <mass
+        value="0.00351900075827936" />"0.792156862745098 0.819607843137255 0.933333333333333 1"
+      <inertia
+        ixx="1.29628985979513E-07"
+        ixy="-6.52485844984895E-16"
+        ixz="-3.59924605396673E-12"
+        iyy="1.84468321490137E-07"
+        iyz="1.52526941935924E-11"
+        izz="2.29316828807764E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_32Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_32Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_32"
+    type="fixed">
+    <origin
+      xyz="0.00794974746830973 0 -0.00494974746830545"
+      rpy="3.14159262778022 1.5707963267949 0" />
+    <parent
+      link="de6_31Link" />
+    <child
+      link="de6_32Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="de6_33Link">
+    <inertial>
+      <origin
+        xyz="-0.0139992013396397 9.13587618565082E-05 0.00320583964912968"
+        rpy="0 0 0" />
+      <mass
+        value="0.00488582803282173" />
+      <inertia
+        ixx="1.68798617984625E-07"
+        ixy="9.98855137903868E-13"
+        ixz="4.30541810646074E-08"
+        iyy="3.94717166797997E-07"
+        iyz="3.87461584926457E-12"
+        izz="3.34310321465542E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_33Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_33Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_33"
+    type="revolute">
+    <origin
+      xyz="0.0244852813742386 0 0"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="de6_32Link" />
+    <child
+      link="de6_33Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.69813"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="de6_34Link">
+    <inertial>
+      <origin
+        xyz="0.0105961227227442 -9.13588890312234E-05 0.00695894072393805"
+        rpy="0 0 0" />
+      <mass
+        value="0.00515270610968853" />
+      <inertia
+        ixx="1.99078387664652E-07"
+        ixy="-6.02093184731526E-17"
+        ixz="6.39033067237191E-16"
+        iyy="3.0430417381371E-07"
+        iyz="-1.12176703562531E-13"
+        izz="3.22653911242144E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_34Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_chef_prueba_v6/meshes/de6_34Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="d6_34"
+    type="revolute">
+    <origin
+      xyz="-0.03 0 -5.38897984281306E-05"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="de6_33Link" />
+    <child
+      link="de6_34Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.0472"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

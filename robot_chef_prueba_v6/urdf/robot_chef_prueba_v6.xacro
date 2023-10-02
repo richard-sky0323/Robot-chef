@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+
+<robot  xmlns:xacro="http://www.ros.org/wiki/xacro" 
+
+	name="robot_chef_prueba_v6_xacro">
+
+	<!--Reemplazo estructura inertial -->
+	<xacro:macro name="inertialm" params="mass xyz rpy ixx ixy ixz iyy iyz izz">
+               <inertial>
+			<origin
+				xyz="${xyz}"
+				rpy="${rpy}" />
+                       <mass value="${mass}" />
+                       <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}"
+                                iyy="${iyy}" iyz="${iyz}"
+                                izz="${izz}" />
+               </inertial>
+	</xacro:macro>
+
+	<!--Reemplazo estructura visual -->
+	<xacro:macro name="visualm" params="ubi rgba">
+		<visual>
+			<geometry>
+			<mesh filename="package://robot_chef_prueba_v6/meshes/${ubi}" />
+			</geometry>
+			<origin 
+				xyz="0 0 0"
+				rpy="0 0 0"/>
+			<material name="">
+				<color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+			</material>
+		</visual>
+	</xacro:macro>
+	
+	<!--Reemplazo estructura colision -->
+	<xacro:macro name="collisionm" params="ubi">
+		<collision>
+			<origin
+			xyz="0 0 0"
+			rpy="0 0 0" />
+			<geometry>
+			<mesh filename="package://robot_chef_prueba_v6/meshes/${ubi}" />
+			</geometry>
+		</collision>
+	</xacro:macro>
+
+	<!-- Reemplazo estructura joint continuo-->
+	<xacro:macro name="jointm" params="xyzo rpy linkp linkc xyza">
+		<origin
+		xyz="${xyzo}"
+		rpy="${rpy}" />
+		<parent
+		link="${linkp}" />
+		<child
+		link="${linkc}" />
+		<axis
+		xyz="${xyza}" />
+	</xacro:macro>
+
+	<!-- Reemplazo estructura joint revolute-->
+	<xacro:macro name="jointr" params="xyzo rpy linkp linkc xyza lower upper effort velocity">
+		<origin
+		xyz="${xyzo}"
+		rpy="${rpy}" />
+		<parent
+		link="${linkp}" />
+		<child
+		link="${linkc}" />
+		<axis
+		xyz="${xyza}" />
+		<limit
+		lower="${lower}"
+		upper="${upper}"
+		effort="${effort}"
+		velocity="${velocity}" />
+	</xacro:macro>
+
+	<!-- Bloque de transmision position -->
+	<xacro:macro name="transmission_block" params="jointn">
+		<transmission name="tran1">
+		  <type>transmission_interface/SimpleTransmission</type>
+		  <joint name="${jointn}">
+		    <hardwareInterface>PositionJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </joint>
+		  <actuator name="motor1">
+		    <hardwareInterface>PositionJointInterface</hardwareInterface>
+		    <mechanicalReduction>1</mechanicalReduction>
+		  </actuator> 
+		</transmission>
+	</xacro:macro>
+
+	<link name="base_Link">
+
+		<xacro:visualm 
+			ubi="base_link.STL" 
+			rgba="0.79216 0.81961 0.93333 1"/>
+		<xacro:collisionm 
+			ubi="base_link.STL"/>
+		<xacro:inertialm
+			mass="2114.6"
+			rpy="0 0 0"
+			xyz="-0.037242 -0.4829 -0.87131"
+			ixx="1214.9"
+			ixy="0.31415"
+			ixz="-8.4286"
+			iyy="1499.6"
+			iyz="-33.332"
+			izz="570.71"/>
+ 	</link>
+
+	<link name="iz1_Link">
+		<xacro:visualm 
+			ubi="iz1_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="iz1_Link.STL"/>
+		<xacro:inertialm
+			mass="0.450104915206598"
+			xyz="0.046899019277028 0.00599386120501055 2.22519419557088E-10"
+			rpy="0 0 0"
+			ixx="0.000334303263892515"
+			ixy="9.96318726703731E-05"
+			ixz="-1.67196559200719E-10"
+			iyy="0.000690198693942158"
+			iyz="3.88296382489624E-10"
+			izz="0.000670525862276053"/>
+ 	</link>
+
+	<link name="iz2_Link">
+		<xacro:inertialm
+			mass="1.05627303687569"
+			xyz="0.123170245762431 2.24128305997828E-07 -0.00580584423243669"
+        		rpy="0 0 0"
+			ixx="0.000800954354611823"
+			ixy="-8.19290612147664E-09"
+			ixz="1.82012426586531E-09"
+			iyy="0.00563952897742919"
+			iyz="-1.10969299836202E-09"
+			izz="0.0056911560526873" />
+		<xacro:visualm 
+			ubi="iz2_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="iz2_Link.STL"/>		
+ 	</link>
+	
+	<link name="iz3_Link">
+		<xacro:inertialm
+			xyz="-0.0820008178809861 -2.51271962209421E-07 -0.00507737401116559"
+        		rpy="0 0 0"
+			mass="0.725662148891879"		
+			ixx="0.00057017315857775"
+			ixy="6.96000352801363E-09"
+			ixz="0.000235262219959166"
+			iyy="0.00221358505941085"
+			iyz="8.70563297078182E-09"
+			izz="0.00224067994548019" />
+		<xacro:visualm 
+			ubi="iz3_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="iz3_Link.STL"/>		
+ 	</link>
+
+	<link name="iz4_Link">
+		<xacro:inertialm
+			xyz="-0.0936340655859038 -3.26723792187789E-08 -0.00454395848901257"
+        		rpy="0 0 0"
+			mass="0.613865486215885" 		
+			ixx="0.000458594108253679"
+			ixy="-1.07774988503502E-09"
+			ixz="-0.000141736411306983"
+			iyy="0.00119500344851908"
+			iyz="-2.94085219447195E-09"
+			izz="0.00121551589680621" />
+		<xacro:visualm 
+			ubi="iz4_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="iz4_Link.STL"/>		
+ 	</link>
+
+	<link name="iz5_Link">
+		<xacro:inertialm
+			xyz="-0.052664238732409 -2.9966948608684E-07 -0.00770287929963565"
+        		rpy="0 0 0"
+			mass="0.441095544298267"		
+			ixx="0.000334974664613456"
+			ixy="-4.5518055062031E-09"
+			ixz="0.00011176763930799"
+			iyy="0.000773087753603316"
+			iyz="9.9887682840268E-09"
+			izz="0.000808220391854739"/>
+		<xacro:visualm 
+			ubi="iz5_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+		<xacro:collisionm 
+			ubi="iz5_Link.STL"/>		
+ 	</link>
+
+	<link name="iz6_Link">
+		<xacro:inertialm
+			xyz="-0.0703002600247344 4.1717175203182E-07 -2.1094237467878E-15"
+        		rpy="0 0 0"
+			mass="0.412559191037482"	
+			ixx="0.000291363474329428"
+			ixy="6.20991320193826E-09"
+			ixz="-2.01551792960855E-16"
+			iyy="0.000379319131169277"
+			iyz="-8.62997824244149E-16"
+			izz="0.000379318429622878" />
+		<xacro:visualm 
+			ubi="iz6_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="iz6_Link.STL"/>		
+ 	</link>
+
+
+	<link name="de1_Link">
+		<xacro:inertialm
+			xyz="0.046899 0.0059939 2.2252E-10"
+			rpy="0 0 0"
+			mass="0.450104915206598"		
+			ixx="0.000334303263892515"
+			ixy="9.96318726703731E-05"
+			ixz="-1.6719655920103E-10"
+			iyy="0.000690198693942158"
+			iyz="3.882963824876E-10"
+			izz="0.000670525862276052"/>
+		<xacro:visualm 
+			ubi="de1_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="de1_Link.STL"/>
+		
+ 	</link>
+
+	<link name="de2_Link">
+		<xacro:inertialm
+			xyz="0.123170214478795 9.0971106384341E-05 -0.00580582176623101"
+        		rpy="0 0 0"
+			mass="1.0562732565036"
+			ixx="0.000800957406783288"
+			ixy="-3.57261281014573E-06"
+			ixz="1.92382598231357E-09"
+			iyy="0.00563952595673453"
+			iyz="-1.07608583509343E-09"
+			izz="0.00569115678280626" />
+		<xacro:visualm 
+			ubi="de2_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="de2_Link.STL"/>		
+ 	</link>
+	
+	<link name="de3_Link">
+		<xacro:inertialm
+			xyz="-0.0820007599456525 0.000182478641151729 -0.00507736778635681"
+        		rpy="0 0 0"
+			mass="0.725662074286973"		
+			ixx="0.000570173201368613"
+			ixy="6.53209317159868E-09"
+			ixz="0.000235262196735889"
+			iyy="0.00221358517979188"
+			iyz="8.50220677416753E-09"
+			izz="0.00224067903647917" />
+		<xacro:visualm 
+			ubi="de3_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="de3_Link.STL"/>		
+ 	</link>
+
+	<link name="de4_Link">
+		<xacro:inertialm
+			xyz="-0.0936339918477448 0.000182680104167721 -0.00454394427635862"
+        		rpy="0 0 0"
+			mass="0.613865661046716"		
+			ixx="0.000458594275799547"
+			ixy="-1.02156716716133E-09"
+			ixz="-0.00014173637060252"
+			iyy="0.0011950033793905"
+			iyz="-2.7894848142881E-09"
+			izz="0.00121551627347461" />
+		<xacro:visualm 
+			ubi="de4_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="de4_Link.STL"/>		
+ 	</link>
+
+	<link name="de5_Link">
+		<xacro:inertialm
+			xyz="-0.0526641873849999 -0.00018299393018642 -0.00770286576105161"
+        		rpy="0 0 0"
+			mass="0.441095446672236"		
+			ixx="0.000334974668607833"
+			ixy="-4.54383162948584E-09"
+			ixz="0.000111767660106979"
+			iyy="0.000773088201308897"
+			iyz="9.24505582886993E-09"
+			izz="0.000808219573594617" />
+		<xacro:visualm 
+			ubi="de5_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="de5_Link.STL"/>		
+ 	</link>
+
+	<link name="de6_Link">
+		<xacro:inertialm
+			xyz="-0.0703001869336869 0.000158655417427489 -9.13588024946677E-05"
+        		rpy="0 0 0"
+			mass="0.412559191037483"		
+			ixx="0.000291363474320705"
+			ixy="6.20996241571198E-09"
+			ixz="8.58326894555804E-14"
+			iyy="0.000379319131165864"
+			iyz="1.53482370042479E-16"
+			izz="0.000379318429617365" />
+		<xacro:visualm 
+			ubi="de6_Link.STL"
+			rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+		<xacro:collisionm 
+			ubi="de6_Link.STL"/>		
+ 	</link>	
+	
+
+<!-- JOINTS -->
+
+	<joint name="i1" type="continuous">
+		<xacro:jointm 
+			xyzo="-0.198356243226931 -0.7 0"
+			rpy="3.14159265358979 -1.5707963267949 0"
+			linkp="base_Link"
+			linkc="iz1_Link"
+			xyza="1 0 0"/>
+	</joint>
+
+	<joint name="i2" type="continuous">
+		<xacro:jointm
+			xyzo="-0.00357189922674747 0 0"
+			rpy="1.5707963267949 0 -3.14159265358979"
+			linkp="iz1_Link"
+			linkc="iz2_Link"
+			xyza="0 0 1"/>
+	</joint>
+
+	<joint name="i3" type="continuous">
+		<xacro:jointm
+			xyzo="0.248000000000001 0 0"
+      			rpy="3.14159265358979 0 -3.14159265358979"
+			linkp="iz2_Link"
+			linkc="iz3_Link"
+			xyza="0 0 1"/>
+	</joint>
+
+	<joint name="i4" type="continuous">
+		<xacro:jointm
+			xyzo="-0.135000000000002 0 0"
+      			rpy="0.00240768248758283 0 0"
+			linkp="iz3_Link"
+			linkc="iz4_Link"
+			xyza="1 0 0"/>
+	</joint>
+	
+	<joint name="i5" type="continuous">
+		<xacro:jointm
+			xyzo="-0.162999999999993 0 0"
+      			rpy="3.14159265358979 0 0"
+			linkp="iz4_Link"
+			linkc="iz5_Link"
+			xyza="0 0 1"/>
+	</joint>
+
+	<joint name="i6" type="continuous">
+		<xacro:jointm
+			xyzo="-0.0800000000000022 0 0"
+      			rpy="-0.523598775598298 0 0" 
+			linkp="iz5_Link"
+			linkc="iz6_Link"
+			xyza="1 0 0"/>
+	</joint>
+
+	
+
+	<joint name="d1" type="continuous">
+		<xacro:jointm 
+			xyzo="0.14164375677307 -0.7 0"
+			rpy="3.1347714600349 -1.5707963267949 0"
+			linkp="base_Link"
+			linkc="de1_Link"
+			xyza="1 0 0"/>
+	</joint>
+
+	<joint name="d2" type="continuous">
+		<xacro:jointm
+			xyzo="-0.00357189922674735 0 0"
+			rpy="1.57079632679489 0 3.14159265302779"
+			linkp="de1_Link"
+			linkc="de2_Link"
+			xyza="0 0 1"/>
+	</joint>
+
+	<joint name="d3" type="continuous">
+		<xacro:jointm
+			xyzo="0.248 0 0"
+      			rpy="3.14159265358979 0 3.14159250263411" 
+			linkp="de2_Link"
+			linkc="de3_Link"
+			xyza="0 0 1"/>
+	</joint>
+
+	<joint name="d4" type="continuous">
+		<xacro:jointm
+			xyzo="-0.135000005935467 0 0"
+      			rpy="0 0 0"
+			linkp="de3_Link"
+			linkc="de4_Link"
+			xyza="1 0 0"/>
+	</joint>
+	
+	<joint name="d5" type="continuous">
+		<xacro:jointm
+			xyzo="-0.162999994064533 0 0"
+      			rpy="3.14159265358979 0 0"
+			linkp="de4_Link"
+			linkc="de5_Link"
+			xyza="0 0 1"/>
+	</joint>
+
+	<joint name="d6" type="continuous">
+		<xacro:jointm
+			xyzo="-0.0800000057659613 0 0"
+      			rpy="-2.61799387799149 0 0"
+			linkp="de5_Link"
+			linkc="de6_Link"
+			xyza="1 0 0"/>
+	</joint>
+
+	
+
+	<xacro:transmission_block jointn="i1"/>
+	<xacro:transmission_block jointn="i2"/>
+	<xacro:transmission_block jointn="i3"/>
+	<xacro:transmission_block jointn="i4"/>
+	<xacro:transmission_block jointn="i5"/>
+	<xacro:transmission_block jointn="i6"/>
+	<xacro:transmission_block jointn="d1"/>
+	<xacro:transmission_block jointn="d2"/>
+	<xacro:transmission_block jointn="d3"/>
+	<xacro:transmission_block jointn="d4"/>
+	<xacro:transmission_block jointn="d5"/>
+	<xacro:transmission_block jointn="d6"/>
+
+
+	<gazebo>
+	  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+		  <robotNamespace>/robot_chef_prueba_v6</robotNamespace>
+    	  </plugin>
+	</gazebo>
+
+
+</robot>
