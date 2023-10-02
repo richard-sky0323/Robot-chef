@@ -1,0 +1,22 @@
+controller_list:
+  - name: fake_arm_l_controller
+    joints:
+      - i1
+      - i2
+      - i3
+      - i4
+      - i5
+      - i6
+  - name: fake_arm_r_controller
+    joints:
+      - d1
+      - d2
+      - d3
+      - d4
+      - d5
+      - d6
+initial:  # Define initial robot poses.
+  - group: arm_l
+    pose: p1l
+  - group: arm_r
+    pose: p1r

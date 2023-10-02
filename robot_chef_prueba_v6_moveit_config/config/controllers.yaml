@@ -1,0 +1,25 @@
+controller_manager_ns: '' 
+controller_list: 
+  - name: robot_chef_prueba_v6 / arm_l_position_controller 
+    action_ns: follow_joint_trajectory 
+    type: FollowJointTrajectory 
+    default: true 
+    joints:
+      - i1
+      - i2
+      - i3
+      - i4
+      - i5
+      - i6
+  - name: robot_chef_prueba_v6 / arm_l_position_controller
+    action_ns: follow_joint_trajectory 
+    type: FollowJointTrajectory 
+    default:
+    joints:
+      - d1
+      - d2
+      - d3
+      - d4
+      - d5
+      - d6
+
