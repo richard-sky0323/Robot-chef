@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<launch>
+
+  <rosparam file="/home/steven/catkin_ws/src/robot_chef_v1_2_gazebo/config/robot_chef_v1_2_control_position.yaml" command="load"/>
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="model" default="/home/steven/catkin_ws/src/robot_chef_prueba_v6/urdf/robot_chef_prueba_v6.xacro"/>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="true"/>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+   <include file="$(find gazebo_ros)/launch/empty_world.launch"> 
+    <arg name="world_name" value="$(find robot_chef_prueba_v6)/worlds/kitchen.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <param name="use_gui" value="$(arg gui)"/>
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="robot_chef_prueba_v6" args="joint_state_controller jointi1_position_controller jointi2_position_controller jointi3_position_controller jointi4_position_controller jointi5_position_controller jointi6_position_controller jointd1_position_controller jointd2_position_controller jointd3_position_controller jointd4_position_controller jointd5_position_controller jointd6_position_controller"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model robot1 -param robot_description -z 0.00"/> 
+
+</launch>

@@ -1,0 +1,57 @@
+robot_chef_prueba_v6:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers ---------------------------------------
+  jointi1_position_controller:
+    type: position_controllers/JointPositionController
+    joint: i1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointi2_position_controller:
+    type: position_controllers/JointPositionController
+    joint: i2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointi3_position_controller:
+    type: position_controllers/JointPositionController
+    joint: i3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointi4_position_controller:
+    type: position_controllers/JointPositionController
+    joint: i4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointi5_position_controller:
+    type: position_controllers/JointPositionController
+    joint: i5
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointi6_position_controller:
+    type: position_controllers/JointPositionController
+    joint: i6
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointd1_position_controller:
+    type: position_controllers/JointPositionController
+    joint: d1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointd2_position_controller:
+    type: position_controllers/JointPositionController
+    joint: d2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointd3_position_controller:
+    type: position_controllers/JointPositionController
+    joint: d3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointd4_position_controller:
+    type: position_controllers/JointPositionController
+    joint: d4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointd5_position_controller:
+    type: position_controllers/JointPositionController
+    joint: d5
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  jointd6_position_controller:
+    type: position_controllers/JointPositionController
+    joint: d6
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
